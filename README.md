@@ -1,7 +1,9 @@
-# Redwood
+# Redwood + Planetscale
 
 This project has been deployed on 100% serverless infrastructure:
 https://redwood-planetscale-example.netlify.app
+
+> This project uses the `prisma migrate dev` flow, requiring a Shadow DB for local dev. This is not the flow recommended by Planetscale, but it is a more intuitive introduction for devs already using Redwood with Prisma.
 ### CLI: Planetscale and MySQL
 Follow this guide:
 - https://docs.planetscale.com/concepts/planetscale-environment-setup#macos-instructions
@@ -40,12 +42,13 @@ For this example, we are using Planetscale for local dev as well as deployment. 
 - [Prisma Planetscale quick start](https://www.prisma.io/docs/guides/database/using-prisma-with-planetscale)
 - [Prisma Schema Reference](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference)
 
-**Create the DB and Branches:**
+#### Create the DB and Branches
+
 Via the Planetscale Dashboard or CLI:
 1. create a Planetscale DB
 2. create two new branches from `main`: *shadow* and *development*
 
-For the *shadow* and *development* branches, we need to get a connection string from the Dashboard:
+For the *shadow* and *development* branches, we need a connection string from the Dashboard:
 1. Make sure you choose the "Connect with Prisma" option. And get a new user:password.
 2. Copy the connection strings into `.env`
 3. For the *shadow* branch, change the env var from `DATABASE_URL` to `SHADOW_DATABASE_URL`
@@ -89,7 +92,7 @@ We need to update the deploy command in `netlify.toml` to *not* run the Prisma d
 + command = "yarn rw deploy netlify --no-prisma"
 ```
 
-Push your commits to a git repo, and then set up your site on the Netlify Dashboard. The last setting to manage is adding two Environment Variables
+Push your commits to a git repo, and then set up your site on the Netlify Dashboard. The last setting to manage is adding two Environment Variables:
 
 **DATABASE_URL**
 From the Planetscale dashboard, get the Prisma connection string for the *main* branch.
