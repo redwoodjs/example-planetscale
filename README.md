@@ -1,6 +1,7 @@
 # Redwood + Planetscale
 
 This project has been deployed on 100% serverless infrastructure:
+
 https://redwood-planetscale-example.netlify.app
 
 > This project uses the `prisma migrate dev` flow, requiring a Shadow DB for local dev. This is not the flow recommended by Planetscale, but it is a more intuitive introduction for devs already using Redwood with Prisma.
