@@ -1,11 +1,14 @@
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+  referentialIntegrity = "prisma"
 }
 
 generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = "native"
+  provider        = "prisma-client-js"
+  binaryTargets   = "native"
+  previewFeatures = ["referentialIntegrity"]
 }
 
 // Define your own datamodels here and run `yarn redwood prisma migrate dev`
@@ -17,16 +20,15 @@ model UserExample {
   name  String?
 }
 
-
 model Post {
   id        Int      @id @default(autoincrement())
   title     String
-  body      String
+  body      String   @db.LongText
   createdAt DateTime @default(now())
 }
 
 model Contact {
-  id        Int @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   name      String
   email     String
   message   String
