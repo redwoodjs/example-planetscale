@@ -1,5 +1,7 @@
 # Redwood
 
+This project has been deployed on 100% serverless infrastructure:
+https://redwood-planetscale-example.netlify.app
 ### CLI: Planetscale and MySQL
 Follow this guide:
 - https://docs.planetscale.com/concepts/planetscale-environment-setup#macos-instructions
@@ -63,6 +65,8 @@ yarn rw dev
 Your browser should open automatically to `http://localhost:8910` to see the web app. Lambda functions run on `http://localhost:8911` and are also proxied to `http://localhost:8910/.redwood/functions/*`.
 
 ### Deployment
+
+#### DB
 Deployment with Planetscale is similar to a git pull and merge workflow. First, create a request to merge *development* into main. This can be done via the Dashboard or CLI:
 ```
 pscale deploy-request create <database> development
@@ -73,7 +77,32 @@ Then approve and deploy via the Dashboard or CLI:
 pscale deploy-request deploy <database> <deploy-request-number>
 ```
 
-####
+#### Hosting Provider
+You can deploy to a provider of your choice, either serverles or traditional server. Because Planetscale is a serverless option, we chose Netlify for this example project:
+```
+yarn rw setup deploy netlify
+```
+
+We need to update the deploy command in `netlify.toml` to *not* run the Prisma deploy migration (it's already done in the previous Planetscale branch merge and deploy). Modify `netlify.toml`:
+```diff
+- command = "yarn rw deploy netlify"
++ command = "yarn rw deploy netlify --no-prisma"
+```
+
+Push your commits to a git repo, and then set up your site on the Netlify Dashboard. The last setting to manage is adding two Environment Variables
+
+**DATABASE_URL**
+From the Planetscale dashboard, get the Prisma connection string for the *main* branch.
+
+**SESSION_SECRET**
+This project uses Redwood dbAuth for Authentication, which requires a secret. Run the following command:
+```
+yarn redwood generate secret
+```
+
+Then copy and paste the output as the value for the env var.
+
+Deploy 🚀
 
 ## Resources
 - [Tutorial](https://redwoodjs.com/tutorial/welcome-to-redwood): getting started and complete overview guide.
