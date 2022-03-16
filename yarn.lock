@@ -6896,13 +6896,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:10.4.2":
-  version: 10.4.2
-  resolution: "autoprefixer@npm:10.4.2"
+"autoprefixer@npm:10.4.4":
+  version: 10.4.4
+  resolution: "autoprefixer@npm:10.4.4"
   dependencies:
-    browserslist: ^4.19.1
-    caniuse-lite: ^1.0.30001297
-    fraction.js: ^4.1.2
+    browserslist: ^4.20.2
+    caniuse-lite: ^1.0.30001317
+    fraction.js: ^4.2.0
     normalize-range: ^0.1.2
     picocolors: ^1.0.0
     postcss-value-parser: ^4.2.0
@@ -6910,7 +6910,7 @@ __metadata:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: a5de2a733a22f07ff4077c71edbbac37fd904889bc7ce1c18e4b4a8d27626a459ecdfaa967b3bab1bac6cbfc329bebc90f63d0eb5e939178dc9f88fc23800349
+  checksum: 42d46509c50d840c5040bfc1a336533f5920af9152caea9f5a734e47cd5bf533b1f7425db60997c43e3d72e3385d08d0baa2c8781179a8466af2bb75ef7671ae
   languageName: node
   linkType: hard
 
@@ -7706,6 +7706,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browserslist@npm:^4.20.2":
+  version: 4.20.2
+  resolution: "browserslist@npm:4.20.2"
+  dependencies:
+    caniuse-lite: ^1.0.30001317
+    electron-to-chromium: ^1.4.84
+    escalade: ^3.1.1
+    node-releases: ^2.0.2
+    picocolors: ^1.0.0
+  bin:
+    browserslist: cli.js
+  checksum: d1f9f07800de445c03ed1035d6672ca647de950c407ef55a6bd757eac9a3e3d1f6e91d81ec68781e514041376320597079f3b522e43f22308ee51dfd02984134
+  languageName: node
+  linkType: hard
+
 "bser@npm:2.1.1":
   version: 2.1.1
   resolution: "bser@npm:2.1.1"
@@ -7962,10 +7977,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001297, caniuse-lite@npm:^1.0.30001312":
+"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001109, caniuse-lite@npm:^1.0.30001312":
   version: 1.0.30001312
   resolution: "caniuse-lite@npm:1.0.30001312"
   checksum: 9969d14a76fde0dcde7a6c486a15340bcc4ccda57a3bca92c8e81c67e816a1629a4a68ddaca0c9918dfc4872bfb5391fcb0659a93ef6d8430c692a322264ec64
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001317":
+  version: 1.0.30001317
+  resolution: "caniuse-lite@npm:1.0.30001317"
+  checksum: 123b6ec8c12d4c46c76038c66bf97c53ca1e7cd4a3cbbe1874c233997968f647d55268ed9c82953af15e43810b585b226a0a85a427fd0a74b5fab2dbd120d652
   languageName: node
   linkType: hard
 
@@ -10143,6 +10165,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"electron-to-chromium@npm:^1.4.84":
+  version: 1.4.85
+  resolution: "electron-to-chromium@npm:1.4.85"
+  checksum: 54b0cf9b933838b478444a15baf5969903813f78534e8b8240f48eaf7401d5cc917c15627efdcff1df6df9415e92b4633d60f2fd2acfd86ad4247723f81312fd
+  languageName: node
+  linkType: hard
+
 "elegant-spinner@npm:^1.0.1":
   version: 1.0.1
   resolution: "elegant-spinner@npm:1.0.1"
@@ -12138,10 +12167,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fraction.js@npm:^4.1.2":
-  version: 4.1.3
-  resolution: "fraction.js@npm:4.1.3"
-  checksum: bde0ac8cdc64a19bd4389234ceeac822874ad7e880ba1e6cfced9339d444312e1797e40ebebdfbcef356e7e6a8492e1e14dd99bce79844e165fd2fbf0e62dfec
+"fraction.js@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "fraction.js@npm:4.2.0"
+  checksum: b16c0a6a7f045b3416c1afbb174b7afca73bd7eb0c62598a0c734a8b1f888cb375684174daf170abfba314da9f366b7d6445e396359d5fae640883bdb2ed18cb
   languageName: node
   linkType: hard
 
@@ -22853,7 +22882,7 @@ __metadata:
     "@redwoodjs/forms": 0.49.1
     "@redwoodjs/router": 0.49.1
     "@redwoodjs/web": 0.49.1
-    autoprefixer: 10.4.2
+    autoprefixer: 10.4.4
     postcss: 8.4.12
     postcss-loader: 6.2.1
     prop-types: 15.8.1
